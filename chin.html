@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+ <style>
+ img {width:80%;
+ height:auto;}
+ </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+    <a class="navbar-brand" href="#">2016日本行</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">首頁</a></li>
+            <li><a href="#about">金澤兼六園</a></li>
+            <li><a href="applaud.html">合掌村</a></li>
+      <li><a href="moutain.html">立山黑部</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>日本行金澤兼六園</h1>
+        <p class="lead">兼六園是一座以水為主的日式庭園，園內各處均可聽見流水聲，此處水源是從10公里之外的犀川上流引進，流進兼六園後同時也提供金澤城之用。此外，園內造景深受中國文化影響，因為兼具宏大、幽邃、人力、蒼古、水泉、眺望6種要素而命名。
+        <div id="board"></div></p>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+$(function(){
+	var imgarray=["chin1.JPG","chin2.JPG","chin3.JPG","chin4.JPG","chin5.JPG","chin6.JPG","chin7.JPG","chin8.JPG"];
+	var s="";
+	var t=1;
+	s="<center><img style='position:absolute;top:auto;left:12%;opacity:1;z-index:"+0+";' src='img2/"+imgarray[0]+"' ></center>"
+	for(var i=1;i<8;i++){
+ s=s+"<center><img style='position:absolute;top:auto;left:12%;opacity:0;z-index:"+i+";' src='img2/"+imgarray[i]+"' ></center>"
+	}
+	$("#board").html(s);
+	setInterval(function(){
+		told=t;
+		t++;//alert(t);
+		if(t>=7){t=0};
+		$("img").eq(told).css("opacity",0);
+		$("img").eq(t).css("opacity",1);
+	//s="<li><center><a  href='#'><img  src=img/"+imgarray[t]+" ></a></center></li>"
+	//$("#board").html(s);
+	//$("#board img").fadeIn(1000);
+		},3000);
+	
+	})
+</script>
+  </body>
+</html>
